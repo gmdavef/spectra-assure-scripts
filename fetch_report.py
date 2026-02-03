@@ -4,8 +4,6 @@ from typing import (
 )
 
 import argparse
-import datetime
-import time
 import logging
 import os
 import json
@@ -57,21 +55,28 @@ def report_version(
         version=version,
         report_type=report_type,
     )
+    # NOTE: report_data is a Response object, part of requests package
     if ("cve") in report_type or ("uri") in report_type:
-        print("REPORT: ", report_data.text)
         output_filename = package + "_" + report_type + ".csv"
+        print("Fetching report: " + output_filename)
         with open(output_filename, 'w') as f:
             print(report_data.text, file=f)
         f.close()
-        return report_data.text
+    elif ("pdf") in report_type:
+        output_filename = package + "_summary.pdf"
+        print("Fetching report: " + output_filename)
+        with open(output_filename, 'wb') as f:
+            f.write(report_data.content) 
+        f.close()
     else:
         report_details = report_data.json()
-        print(json.dumps(report_details, indent=2))
         output_filename = package + "_" + report_type + ".json"
+        print("Fetching report: " + output_filename)
         with open(output_filename, 'w') as f:
             print(json.dumps(report_details, indent=2), file=f)
         f.close()
-        return report_details
+
+    return report_data.reason
 
 
 def x_main() -> None:
@@ -81,7 +86,7 @@ def x_main() -> None:
     parser.add_argument("-p", "--project", required=True, help="Project in Portal.")
     parser.add_argument("-k", "--package", required=True, help="Package.")
     parser.add_argument("-v", "--version", required=True, help="Version.")
-    parser.add_argument("-t", "--type", required=True, help="Report type. Must be one of: CycloneDX, rl-checks, rl-cve, rl-json, rl-uri, SARIF, SPDX.")
+    parser.add_argument("-t", "--type", required=True, help="Report type. Must be one of: CycloneDX, rl-checks, rl-cve, rl-json, rl-uri, rl-summary-pdf, SARIF, SPDX.")
 
     args = parser.parse_args()
     proj = args.project
