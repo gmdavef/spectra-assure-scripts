@@ -3,11 +3,9 @@ from typing import (
     Dict,
 )
 
-import datetime
-import time
+import argparse
 import logging
 import os
-import json
 
 from spectra_assure_api_client import (
     SpectraAssureApiOperations,
@@ -73,21 +71,27 @@ def create_package(
     )
     print("Create package", rr.status_code, rr.text)
 
+
 def x_main() -> None:
     api_client = make_api_client()
 
-    new_project = f"Project-{(datetime.datetime.now()).strftime("%d-%m-%Y-%H-%M-%S")}"
-    new_package = f"Package-{(datetime.datetime.now()).strftime("%d-%m-%Y-%H-%M-%S")}"
+    parser = argparse.ArgumentParser(description="Provide --project, and --package on the command line.")
+    parser.add_argument("-p", "--project", required=True, help="Project to create.")
+    parser.add_argument("-k", "--package", required=True, help="Package to create.")
+
+    args = parser.parse_args()
+    new_proj = args.project
+    new_pkg = args.package
 
     create_project(
         api_client=api_client,
-        project=new_project,
+        project=new_proj,
     )
 
     create_package(
         api_client=api_client,
-        project=new_project,
-        package=new_package,
+        project=new_proj,
+        package=new_pkg,
     )
 
     print("Done")
