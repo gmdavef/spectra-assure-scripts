@@ -42,7 +42,9 @@ def extract_cbom(input_file, output_file=None):
                  # logic for certificates
                 elif kind_lower == 'certificate':
                     target_group = "CERTIFICATE"
-                    asset_type = "X.509"
+                    #asset_type = "X.509"
+                    cert_props = crypto.get('certificateProperties', {})
+                    asset_type = cert_props.get('certificateFormat', 'Unknown').upper()
                     description = name
                     if version == 'N/A':
                         version = crypto.get('certificateVersion', 'N/A')
