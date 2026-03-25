@@ -56,21 +56,22 @@ def report_version(
         report_type=report_type,
     )
     # NOTE: report_data is a Response object, part of requests package
+    output_filename_prefix = package + "_" + version
     if ("cve") in report_type or ("uri") in report_type:
-        output_filename = package + "_" + report_type + ".csv"
+        output_filename = output_filename_prefix + "_" + report_type + ".csv"
         print("Fetching report: " + output_filename)
         with open(output_filename, 'w') as f:
             print(report_data.text, file=f)
         f.close()
     elif ("pdf") in report_type:
-        output_filename = package + "_summary.pdf"
+        output_filename = output_filename_prefix + "_summary.pdf"
         print("Fetching report: " + output_filename)
         with open(output_filename, 'wb') as f:
             f.write(report_data.content) 
         f.close()
     else:
         report_details = report_data.json()
-        output_filename = package + "_" + report_type + ".json"
+        output_filename = output_filename_prefix + "_" + report_type + ".json"
         print("Fetching report: " + output_filename)
         with open(output_filename, 'w') as f:
             print(json.dumps(report_details, indent=2), file=f)
@@ -86,13 +87,13 @@ def x_main() -> None:
     parser.add_argument("-p", "--project", required=True, help="Project in Portal.")
     parser.add_argument("-k", "--package", required=True, help="Package.")
     parser.add_argument("-v", "--version", required=True, help="Version.")
-    parser.add_argument("-t", "--type", required=True, help="Report type. Must be one of: CycloneDX, rl-checks, rl-cve, rl-json, rl-uri, rl-summary-pdf, SARIF, SPDX.")
+    parser.add_argument("-t", "--type", required=True, help="Report type. Must be one of: cyclonedx, rl-checks, rl-cve, rL-diff, rl-json, rl-summary-pdf, rl-uri, sarif, spdx.")
 
     args = parser.parse_args()
     proj = args.project
     pack = args.package
     vers = args.version
-    rtype = args.type
+    rtype = args.type.lower()
 
     status_code = report_version(
         api_client=api_client,
