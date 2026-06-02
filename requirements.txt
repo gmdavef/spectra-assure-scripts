@@ -1,0 +1,1 @@
+spectra-assure-sdk>=1.0.13
