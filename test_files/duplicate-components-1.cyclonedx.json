@@ -1,0 +1,227 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "components": [
+    {
+      "bom-ref": "00223baf-6556-5b1c-a7f7-2e979c08b123",
+      "cpe": "",
+      "description": "",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "system/base/stage2.img/LiveOS/rootfs.img/usr/lib64/python2.7/site-packages/rpm/_rpmb.so"
+          }
+        ]
+      },
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "7a942f11fd2c6c703152773ef6962f68"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "1d2dd3a471565f7ae9880f3565fd109e7008e226"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "9ab1d55f4ef4734c9e4d1b9f89589e1a0607efedbe81373408926b35ff0a99b1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "GPL-2.0+",
+            "properties": [
+              {
+                "name": "family",
+                "value": "Copyleft"
+              }
+            ]
+          }
+        }
+      ],
+      "name": "rpm-python",
+      "publisher": "Fedora Project",
+      "purl": "pkg:rpm/rpm-python@4.11.3-3.fc20",
+      "type": "application",
+      "version": "4.11.3-3.fc20"
+    },
+    {
+      "bom-ref": "4769cbc1-37fd-52ea-989d-a249b1bf0cdc",
+      "cpe": "",
+      "description": "",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "system/ramdisk.dok/unpacked_files/0/usr/lib64/libpython2.7.so.1.0"
+          }
+        ]
+      },
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "8d566d4a3856ae66cf42949df5f8c96e"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "2df2ad012799ea959d5a38f68d75d3c8534ebee8"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "f7bd38a6a8831a1bccd0b5ef592a7e43dc32c1b4a35d694c335ba9a1df00b301"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Python-2.0",
+            "properties": [
+              {
+                "name": "family",
+                "value": "Permissive"
+              }
+            ]
+          }
+        }
+      ],
+      "name": "python-libs",
+      "publisher": "Fedora Project",
+      "purl": "pkg:rpm/python-libs@2.7-8.fc14.1",
+      "type": "application",
+      "version": "2.7-8.fc14.1"
+    },
+    {
+      "bom-ref": "6f9ede42-a7e0-5c7b-a3bb-8158103e2135",
+      "cpe": "",
+      "description": "",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "system/ramdisk.pxe/unpacked_files/0/usr/lib64/libpython2.7.so.1.0"
+          }
+        ]
+      },
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "8d566d4a3856ae66cf42949df5f8c96e"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "2df2ad012799ea959d5a38f68d75d3c8534ebee8"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "f7bd38a6a8831a1bccd0b5ef592a7e43dc32c1b4a35d694c335ba9a1df00b301"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Python-2.0",
+            "properties": [
+              {
+                "name": "family",
+                "value": "Permissive"
+              }
+            ]
+          }
+        }
+      ],
+      "name": "python-libs",
+      "publisher": "Fedora Project",
+      "purl": "pkg:rpm/python-libs@2.7-8.fc14.1",
+      "type": "application",
+      "version": "2.7-8.fc14.1"
+    },
+    {
+      "bom-ref": "edca4792-1bc3-503e-b01b-6f9adf695311",
+      "cpe": "",
+      "description": "",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "system/ramdisk/unpacked_files/0/usr/lib64/libpython2.7.so.1.0"
+          }
+        ]
+      },
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "8d566d4a3856ae66cf42949df5f8c96e"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "2df2ad012799ea959d5a38f68d75d3c8534ebee8"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "f7bd38a6a8831a1bccd0b5ef592a7e43dc32c1b4a35d694c335ba9a1df00b301"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Python-2.0",
+            "properties": [
+              {
+                "name": "family",
+                "value": "Permissive"
+              }
+            ]
+          }
+        }
+      ],
+      "name": "python-libs",
+      "publisher": "Fedora Project",
+      "purl": "pkg:rpm/python-libs@2.7-8.fc14.1",
+      "type": "application",
+      "version": "2.7-8.fc14.1"
+    },
+    {
+      "bom-ref": "f1e74113-b9ba-5f9d-9278-cb01d2bb1050",
+      "cpe": "",
+      "description": "",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "system/base/stage2.img/LiveOS/rootfs.img/usr/lib64/libpython2.7.so.1.0"
+          }
+        ]
+      },
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "8d566d4a3856ae66cf42949df5f8c96e"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "2df2ad012799ea959d5a38f68d75d3c8534ebee8"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "f7bd38a6a8831a1bccd0b5ef592a7e43dc32c1b4a35d694c335ba9a1df00b301"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Python-2.0",
+            "properties": [
+              {
+                "name": "family",
+                "value": "Permissive"
+              }
+            ]
+          }
+        }
+      ],
+      "name": "python-libs",
+      "publisher": "Fedora Project",
+      "purl": "pkg:rpm/python-libs@2.7-8.fc14.1",
+      "type": "application",
+      "version": "2.7-8.fc14.1"
+    }
+  ]
+}
