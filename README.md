@@ -7,7 +7,7 @@ This repo is a place for various scripts & utilities for [Spectra Assure](https:
 
 - **extract_cbom.py** - Extracts the cryptography bill of materials (CBOM) from a CycloneDX BOM (v1.6 or 1.7, JSON format). Output is in tabular format to the console. Or, the output can be sent to a file using the `-o/--output` argument.
 - **create_license_notice_file.py** - Creates a license notice file from a CycloneDX SBOM (v1.4 or greater, JSON format). Only components of type "library" are included. `Required argument: -s/--sbom`
-- **consolidate_cyclonedx.py** - Consolidates identical components with different `location` into a single component with multiple `occurrences`. Works on a CycloneDX BOM (v1.6 or 1.7, JSON format).
+- **consolidate_cyclonedx.py** - Consolidates identical components with different `location` into a single component with multiple `occurrences`. Works on a CycloneDX BOM (v1.6 or 1.7, JSON format). The JSON file(s) in test_files folder can be used for testing.
 
 ### Portal-related scripts
 
