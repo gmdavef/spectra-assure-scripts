@@ -5,8 +5,9 @@ This repo is a place for various scripts & utilities for [Spectra Assure](https:
 
 ### SBOM-related scripts
 
-- **extract_cbom.py** - Extracts the cryptography bill of materials (CBOM) from a CycloneDX BOM (v1.6 or greater, JSON format). Output is in tabular format to the console. Or, the output can be sent to a file using the `-o/--output` argument.
+- **extract_cbom.py** - Extracts the cryptography bill of materials (CBOM) from a CycloneDX BOM (v1.6 or 1.7, JSON format). Output is in tabular format to the console. Or, the output can be sent to a file using the `-o/--output` argument.
 - **create_license_notice_file.py** - Creates a license notice file from a CycloneDX SBOM (v1.4 or greater, JSON format). Only components of type "library" are included. `Required argument: -s/--sbom`
+- **consolidate_cyclonedx.py** - Consolidates identical components with different `location` into a single component with multiple `occurrences`. Works on a CycloneDX BOM (v1.6 or 1.7, JSON format).
 
 ### Portal-related scripts
 
@@ -24,4 +25,3 @@ NOTE: The following environment variables must be set.
 - **scan_file.py** - Uploads and scans the specified file in Portal. `Required arguments: -p/--project, -k/--package, -v/--version, -f/--file`
 - **fetch_report.py** - Downloads the specified report type for a scanned package. Valid report types are listed on the [API documentation page](https://docs.secure.software/api-reference/#tag/Version/operation/getVersionReport). `Required arguments: -p/--project, -k/--package, -v/--version, -t/--type`.
 - **rescan_all_versions.py** - Initiates rescan of all versions in a package. Only versions that aren't in sync will be rescanned. `Required arguments: -p/--project, -k/--package`
-
